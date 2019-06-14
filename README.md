@@ -37,6 +37,14 @@ My Windows setup theme. Uses these [dotfiles](https://github.com/thilan-tran/dot
   - glass, 60 opaque, #262626 taskbar
 - [Flux](https://justgetflux.com/) for adaptive display hue
 
+## Other
+
+- [Potplayer](https://potplayer.daum.net/) for videos
+  - with [Dragoon X](https://www.deviantart.com/niivu/art/Dragoon-X-687204548) skin
+- [Musicbee](https://getmusicbee.com/) for music
+  - with [Metro](https://getmusicbee.com/forum/index.php?topic=9295.0) skin
+  - settings backed up on Drive
+
 ## Gallery
 
 ![Desktop](https://imgur.com/TBA0Qf9.png)
@@ -52,3 +60,7 @@ My Windows setup theme. Uses these [dotfiles](https://github.com/thilan-tran/dot
 ![Notetaking](https://imgur.com/T8EoBR2.png)
 
 ![Windowed](https://imgur.com/h7tL8zc.png)
+
+![Media](https://imgur.com/NiRj3Xf.png)
+
+[Album](https://imgur.com/a/gTn22Nh)
