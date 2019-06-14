@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New Tab</title>
+    <!-- <link rel="shortcut icon" href="img/fav.png"/> -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-size: 25px;
+        transition: ease-in-out 0.3s;
+        font-family: "Bariol";
+      }
+
+      body {
+        background: #282c34;
+        color: #abb2bf;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      #time,
+      #greet {
+        cursor: default;
+      }
+
+      a,
+      a:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        color: #aaa;
+      }
+
+      .boop {
+        /*padding: 150px 0px 150px 0px;*/
+        /*min-height: 100%;*/
+        /*min-width: 100%;*/
+        background: #282c34;
+        margin-top: 22%;
+        margin-bottom: 15%;
+      }
+
+      #time {
+        font-size: 4.25em;
+      }
+
+      #greet {
+        font-size: 1.5em;
+      }
+
+      #time,
+      #greet,
+      .searchbox {
+        margin: 20px;
+      }
+
+      input,
+      input:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+
+      .searchbox {
+        background: #151515b0;
+        border-radius: 15px;
+        /* border: none; */
+        box-shadow: none;
+        padding: 10px;
+        font-size: 1.5em;
+        width: 275px;
+        text-align: center;
+        color: #abb2bf;
+      }
+
+      .searchbox:hover {
+        background: #cccccc;
+        color: #808080;
+      }
+
+      .searchbox:focus {
+        width: 350px;
+        background: #cccccc;
+        color: #808080;
+        border: none;
+        box-shadow: none;
+      }
+
+      .hamburg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 10px 0px 0px 15px;
+        font-size: 25px;
+        max-height: 20px;
+        max-width: 20px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        z-index: 1;
+      }
+
+      .hamburg:hover {
+        cursor: pointer;
+      }
+
+      nav input {
+        display: none;
+      }
+
+      .menu {
+        /*display: none;*/
+        background: #4c4c4cd0;
+        position: absolute;
+        padding-top: 60px;
+        top: 0;
+        left: 0;
+        min-height: 100%;
+        width: 150px;
+        list-style-type: none;
+        left: -500px;
+      }
+
+      li a {
+        display: block;
+        padding: 20px 0px 20px 0px;
+        margin: 0px 0px 5px 0px;
+      }
+
+      li a:hover {
+        background: #222;
+      }
+
+      input#show:focus ~ .menu {
+        /*display: block;*/
+        left: 0px;
+      }
+
+      input#show:focus ~ .hamburg {
+        left: 500px;
+      }
+
+      #show,
+      .menu {
+        transition: left 0.5s;
+      }
+
+      @media only screen and (max-width: 650px) {
+        #time {
+          font-size: 4em;
+        }
+
+        .searchbox {
+          width: 175px;
+        }
+
+        .searchbox:focus {
+          width: 200px;
+        }
+      }
+    </style>
+    <!-- <script src="scripts/js.js" refer></script> -->
+    <script>
+      window.onload = greeting;
+
+      function greeting() {
+        function checkTime(i) {
+          if (i < 10) {
+            i = "0" + i;
+          }
+          return i;
+        }
+
+        function time() {
+          var today = new Date();
+          var h = today.getHours() % 12;
+          if (h == 0) h = 12;
+          var m = today.getMinutes();
+          var s = today.getSeconds();
+          // add a zero in front of numbers<10
+          m = checkTime(m);
+          s = checkTime(s);
+          if (today.getHours() < 12) var t = " AM";
+          else var t = " PM";
+          document.getElementById("time").innerHTML = h + ":" + m + t;
+          t = setTimeout(function() {
+            time();
+          }, 500);
+        }
+        time();
+
+        var dateJS = new Date();
+        var hrs = dateJS.getHours();
+
+        var greeting;
+
+        if (hrs < 12) greeting = "good morning.";
+        else if (hrs >= 12 && hrs <= 17) greeting = "good afternoon.";
+        else if (hrs >= 17 && hrs <= 24) greeting = "good evening.";
+
+        document.getElementById("greet").innerHTML = greeting;
+      }
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <label for="show"><span class="hamburg">&#9776;</span></label>
+      <input type="checkbox" id="show" />
+
+      <ul class="menu">
+        <li><a target="_blank" href="https://www.youtube.com">YT</a></li>
+        <li><a target="_blank" href="https://twitter.com">Tweeter</a></li>
+        <li><a target="_blank" href="https://github.com">Github</a></li>
+        <li><a target="_blank" href="https://userstyles.org">Userstyles</a></li>
+        <li><a target="_blank" href="http://deviantart.com">DA</a></li>
+      </ul>
+    </nav>
+
+    <div class="boop">
+      <div id="time"></div>
+      <div id="greet"></div>
+
+      <div class="searchbar">
+        <form method="get" action="https://google.com/search?q=">
+          <input
+            type="text"
+            class="searchbox"
+            name="q"
+            title="Search Google"
+            placeholder="search..."
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

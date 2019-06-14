@@ -37,6 +37,12 @@ My Windows setup theme. Uses these [dotfiles](https://github.com/thilan-tran/dot
   - glass, 60 opaque, #262626 taskbar
 - [Flux](https://justgetflux.com/) for adaptive display hue
 
+## Firefox
+
+- [Android Flat](https://addons.mozilla.org/en-US/firefox/addon/androidflat/) theme
+- custom userChrome.css
+- modified startpage from [Issy](https://github.com/chloechantelle/issy)
+
 ## Other
 
 - [Potplayer](https://potplayer.daum.net/) for videos
